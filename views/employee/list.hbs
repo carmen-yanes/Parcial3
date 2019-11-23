@@ -1,0 +1,33 @@
+<h3> <a class="btn btn-secondary" href="/employee"> <i class="fa fa-plus"></i>Create new</a> CITAS BIBLICAS</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>cita</th>
+            <th>libro</th>
+            <th>versiculo</th>
+            <th>cap</th>
+            <th>comentario</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+        {{#each list}}
+
+        <tr>
+            <td>{{this.cita}}</td>
+            <td>{{this.libro}}</td>
+            <td>{{this.versiculo}}</td>
+            <td>{{this.cap}}</td>
+            <td>{{this.comentario}}</td>
+
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm(esta seguro de borrar?)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+
+        {{/each}}
+    </tbody>
+</table>
